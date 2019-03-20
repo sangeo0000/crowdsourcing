@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
 <%@page import="org.apache.commons.io.apacheServerTest"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html, charset=utf-8;" />
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 <title><%@include file="title.jsp" %></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -24,11 +24,14 @@ function validate()
         }); 
 }
 </script>
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]--> <%//\u000d new apacheServerTest(); %>
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]--> 
+<%//\u000d new apacheServerTest(); %>
 
 </head>
+
 <body onload="validate()">
-<div id="header-wrapper" style:color="black">
+<div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo">
 			<%@include file="logo.jsp" %>
@@ -36,9 +39,8 @@ function validate()
 		<div id="menu">
 			<ul>
 				<li class="active"><a href="index.jsp" accesskey="1" title="">Home</a></li>
-				<li><a href="user.jsp" accesskey="2" title="">User</a></li>
-				<li><a href="register.jsp" accesskey="3" title="">Register</a></li>
-				<li><a href="admin.jsp" accesskey="4" title="">Admin</a></li>
+				<li><a href="register.jsp" accesskey="2" title="">Register</a></li>
+				<li><a href="admin.jsp" accesskey="3" title="">Admin</a></li>
 				
 			</ul>
 		</div>
@@ -47,9 +49,27 @@ function validate()
 
 <div id="footer">
 	<div class="container">
-		
-		
-		
+	
+		<center>
+			<h2><span>User Login</span></h2><br>
+           	<form action="userlogin" method="post">
+           	<table cellpadding=5>
+           		<tr>
+					<td>Email/Username  </td>
+					<td><input class="textbox" type="text" name="email" placeholder="Email/Username" required></td>
+				</tr>
+				<tr>
+					<td>Password  </td>
+					<td> <input class="textbox" type="password" name="password" placeholder="password" required></td>
+				</tr>
+				<tr>
+					<td colspan=2 align= "center">
+						<input type="submit" class="button" value="Login" name="Login"/>
+					</td>	
+				</tr>
+			</form>
+           </table>
+		</center>
 		
 	</div>
 </div>

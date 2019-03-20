@@ -7,7 +7,7 @@
 	{
 		margin: 0px;
 		padding: 0px;
-		background: blue;
+		background: #b3ffff;
 		font-family: 'Questrial', sans-serif;
 		font-size: 12pt;
 		color: rgba(0,0,0,.6);
@@ -55,7 +55,7 @@
 	.container
 	{
 		margin: 0px auto;
-		width: 1200px;
+		width: device-width;
 	}
 	
 
@@ -299,7 +299,7 @@
 	.title .byline
 	{
 		font-size: 1.1em;
-		color: #6F6F6F#;
+		color: #6F6F6F;
 	}
 
 /*********************************************************************************/
@@ -308,8 +308,8 @@
 
 	#header-wrapper
 	{
-		overflow: hidden;
-		background: green;
+		overflow: scroll;
+		background: #00cccc;
 	}
 
 	#header
@@ -324,7 +324,8 @@
 	#logo
 	{
 		padding: 0em 0em 0em 0em;
-		color:black;
+		color:white;
+		text-align: center;
 	}
 	
 	#logo h1
@@ -333,12 +334,14 @@
 		margin-bottom: 0.20em;
 		padding: 0.20em 0.9em;
 		font-size: 3.5em;
+		text-align: center;
 	}
 	
 	#logo a
 	{
 		text-decoration: none;
-		color: #FFF;
+		color: white;
+		
 	}
 	
 	#logo span
@@ -363,7 +366,7 @@
 	#menu
 	{
 		height: 60px;
-		color:black;
+		color:white;
 	}
 	
 	#menu ul
@@ -388,13 +391,13 @@
 		text-transform: uppercase;
 		line-height: 60px;
 		outline: 0;
-		color: yellow;
+		color: white;
 	}
 	
 	#menu li:hover a, #menu li.active a, #menu li.active span
 	{
-		background: #FFF;
-		color: yellow;
+		background: #66ffff;
+		color: black;
 	}
 	
 	#menu .current_page_item a
@@ -417,7 +420,7 @@
 
 	.wrapper
 	{
-		overflow: hidden;
+		overflow: scroll;
 		padding: 0em 0em 5em 0em;
 		background: #FFF;
 	}
@@ -429,7 +432,7 @@
 
 	#wrapper2
 	{
-		overflow: hidden;
+		overflow: scroll;
 		background: #F3F3F3;
 		padding: 5em 0em;
 		text-align: center;
@@ -449,7 +452,7 @@
 
 	#welcome
 	{
-		overflow: hidden;
+		overflow: scroll;
 		width: 1000px;
 		padding: 6em 100px 0em 100px;
 		text-align: center;
@@ -475,7 +478,7 @@
 
 	#page-wrapper
 	{
-		overflow: hidden;
+		overflow: scroll;
 		background: #2F1E28;
 		padding: 3em 0em 6em 0em;
 		text-align: center;
@@ -513,9 +516,9 @@
 
 	#footer
 	{
-		overflow: hidden;
+		overflow: scroll;
 		padding: 5em 0em;
-		background: brown;
+		background: #e6ffff;
 		text-align: center;
 	}
 
@@ -549,7 +552,7 @@
 
 	#copyright
 	{
-		overflow: hidden;
+		overflow: scroll;
 		padding: 5em 0em;
 		border-top: 20px solid rgba(255,255,255,0.08);
 		text-align: center;
@@ -560,7 +563,7 @@
 	{
 		letter-spacing: 1px;
 		font-size: 0.90em;
-		color: rgba(255,255,255,0.6);
+		color: black;
 	}
 	
 	#copyright a
@@ -575,7 +578,7 @@
 
 	#newsletter
 	{
-		overflow: hidden;
+		overflow: scroll;
 		padding: 8em 0em;
 		background: #EDEDED;
 		text-align: center;
@@ -598,7 +601,7 @@
 
 	#portfolio
 	{
-		overflow: hidden;
+		overflow: scroll;
 		padding-top: 5em;
 		border-top: 1px solid rgba(0,0,0,0.2);
 	}
@@ -654,7 +657,7 @@
 
 	#three-column
 	{
-		overflow: hidden;
+		overflow: scroll;
 		margin-top: 5em;
 		padding-top: 1em;
 		border-top: 1px solid rgba(0,0,0,0.2);

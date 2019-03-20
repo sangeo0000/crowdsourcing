@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><%@include file="title.jsp" %></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -87,9 +88,8 @@ if(request.getParameter("fail")!=null)
 		<div id="menu">
 			<ul>
 				<li><a href="index.jsp" accesskey="1" title="">Home</a></li>
-				<li><a href="user.jsp" accesskey="2" title="">User</a></li>
-				<li class="active"><a href="register.jsp" accesskey="3" title="">Register</a></li>
-				<li><a href="admin.jsp" accesskey="4" title="">Admin</a></li>
+				<li class="active"><a href="register.jsp" accesskey="2" title="">Register</a></li>
+				<li><a href="admin.jsp" accesskey="3" title="">Admin</a></li>
 				
 			</ul>
 		</div>

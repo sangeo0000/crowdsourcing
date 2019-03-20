@@ -14,6 +14,7 @@
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
 <script type="text/javascript">
 function changeLikeDislike(type,id){
       var dataString = 'id='+ id + '&type=' + type;
