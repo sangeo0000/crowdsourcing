@@ -7,7 +7,7 @@
 	{
 		margin: 0px;
 		padding: 0px;
-		background: #b3ffff;
+		background: #64ABD1;
 		font-family: 'Questrial', sans-serif;
 		font-size: 12pt;
 		color: rgba(0,0,0,.6);
@@ -55,7 +55,7 @@
 	.container
 	{
 		margin: 0px auto;
-		width: device-width;
+		width: 1200px;
 	}
 	
 
@@ -89,7 +89,7 @@
 				-webkit-appearance: none;
 				display: block;
 				border: 0;
-				background: green;
+				background: #fff;
 				background: rgba(255,255,255,0.75);
 				width: 100%;
 				border-radius: 0.50em;
@@ -299,7 +299,7 @@
 	.title .byline
 	{
 		font-size: 1.1em;
-		color: #6F6F6F;
+		color: #6F6F6F#;
 	}
 
 /*********************************************************************************/
@@ -308,8 +308,8 @@
 
 	#header-wrapper
 	{
-		overflow: scroll;
-		background: #00cccc;
+		overflow: hidden;
+		background: #C73399 url(images/overlay.png) repeat;
 	}
 
 	#header
@@ -324,8 +324,6 @@
 	#logo
 	{
 		padding: 0em 0em 0em 0em;
-		color:white;
-		text-align: center;
 	}
 	
 	#logo h1
@@ -334,14 +332,12 @@
 		margin-bottom: 0.20em;
 		padding: 0.20em 0.9em;
 		font-size: 3.5em;
-		text-align: center;
 	}
 	
 	#logo a
 	{
 		text-decoration: none;
-		color: white;
-		
+		color: #FFF;
 	}
 	
 	#logo span
@@ -366,7 +362,6 @@
 	#menu
 	{
 		height: 60px;
-		color:white;
 	}
 	
 	#menu ul
@@ -391,13 +386,13 @@
 		text-transform: uppercase;
 		line-height: 60px;
 		outline: 0;
-		color: white;
+		color: #FFF;
 	}
 	
 	#menu li:hover a, #menu li.active a, #menu li.active span
 	{
-		background: #66ffff;
-		color: black;
+		background: #FFF;
+		color: #CC3399;
 	}
 	
 	#menu .current_page_item a
@@ -420,7 +415,7 @@
 
 	.wrapper
 	{
-		overflow: scroll;
+		overflow: hidden;
 		padding: 0em 0em 5em 0em;
 		background: #FFF;
 	}
@@ -432,7 +427,7 @@
 
 	#wrapper2
 	{
-		overflow: scroll;
+		overflow: hidden;
 		background: #F3F3F3;
 		padding: 5em 0em;
 		text-align: center;
@@ -452,7 +447,7 @@
 
 	#welcome
 	{
-		overflow: scroll;
+		overflow: hidden;
 		width: 1000px;
 		padding: 6em 100px 0em 100px;
 		text-align: center;
@@ -478,7 +473,7 @@
 
 	#page-wrapper
 	{
-		overflow: scroll;
+		overflow: hidden;
 		background: #2F1E28;
 		padding: 3em 0em 6em 0em;
 		text-align: center;
@@ -516,9 +511,9 @@
 
 	#footer
 	{
-		overflow: scroll;
+		overflow: hidden;
 		padding: 5em 0em;
-		background: #e6ffff;
+		background: #E3F0F7;
 		text-align: center;
 	}
 
@@ -552,18 +547,17 @@
 
 	#copyright
 	{
-		overflow: scroll;
+		overflow: hidden;
 		padding: 5em 0em;
 		border-top: 20px solid rgba(255,255,255,0.08);
 		text-align: center;
-		color:black;
 	}
 	
 	#copyright p
 	{
 		letter-spacing: 1px;
 		font-size: 0.90em;
-		color: black;
+		color: rgba(255,255,255,0.6);
 	}
 	
 	#copyright a
@@ -578,7 +572,7 @@
 
 	#newsletter
 	{
-		overflow: scroll;
+		overflow: hidden;
 		padding: 8em 0em;
 		background: #EDEDED;
 		text-align: center;
@@ -601,7 +595,7 @@
 
 	#portfolio
 	{
-		overflow: scroll;
+		overflow: hidden;
 		padding-top: 5em;
 		border-top: 1px solid rgba(0,0,0,0.2);
 	}
@@ -657,7 +651,7 @@
 
 	#three-column
 	{
-		overflow: scroll;
+		overflow: hidden;
 		margin-top: 5em;
 		padding-top: 1em;
 		border-top: 1px solid rgba(0,0,0,0.2);

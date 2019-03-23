@@ -6,7 +6,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><%@include file="title.jsp" %></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -109,40 +108,7 @@ if(request.getParameter("Unfollow")!=null){
          
        
           
-            <%
-					//GlobalFunction GF = new GlobalFunction();
-					
-					int user_id = Integer.parseInt((String)session.getAttribute("userid"));
-					System.out.println("notify from:"+user_id);
-					GF.updateNotificationStatus(userid);
-					Connection con =DbConnection.getConnection();
-					Statement st = con.createStatement();
-					Statement st1 = con.createStatement();
-				//	String sql1 ="select * from notification where notiFrom="+user_id+" ORDER BY id DESC LIMIT 10";
-					String sql1 ="select * from notification ORDER BY id DESC LIMIT 10";
-					ResultSet rs1 = st1.executeQuery(sql1);
-					while(rs1.next()){
-						
-							
-							%>
-							
-							<div class="friendList" style="border-bottom: 1px solid #ccc; width: 100%; height:auto; margin-top:30px;float:left">
-								
-								<div style="width: 80%;background-color: rgb(231, 121, 113);color: #fff; height: auto; border: 0px solid #ccc; float: left">
-									<p style="margin-left: 30px;font-size:16px "><%= rs1.getString("Subject") %> </p>
-									
-								</div>
-		
-							</div>
-							
-					<%
-					
-					}
-					
-					
-					
-							%>
-							
+           
 		
 		
 		

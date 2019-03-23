@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><%@include file="title.jsp" %></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -46,23 +45,12 @@ if(request.getParameter("done")!=null)
          
        
            <form action="userlogin" method="post">
-           <center>
-           <table cellpadding=5>
-           <tr>
-			<td><p>Email/Username  </td><td><input class="textbox" type="text" name="email" placeholder="Email/Username" required></p></td>
-			</tr>
-			<tr>
-			<td><p>Password  </td><td> <input class="textbox" type="password" name="password" placeholder="password" required></p></td>
-			</tr>
-			<tr>
-			<td colspan=2 align= "center">
-			<input type="submit" class="button" value="Login" name="Login"/>&nbsp; 
-			<a href="#" style="font-size: 15px; font-weight: bold;"></a>
-			</td>	
-			</tr>
+			<p>Email/Username  <input class="textbox" type="text" name="email" placeholder="Email/Username" required></p>
+			<p>Password   <input class="textbox" type="password" name="password" placeholder="password" required></p>
+			<input type="submit" class="button" value="Login" name="Login"/>&nbsp; <a href="#" style="font-size: 15px; font-weight: bold;"></a>
 			</form>
-           </table>
-		</center>
+           
+		
 		
 		
 	</div>

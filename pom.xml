@@ -1,9 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>CrowdSorcing1</groupId>
-  <artifactId>CrowdSorcing1</artifactId>
+  <groupId>CrowdSourcing</groupId>
+  <artifactId>CrowdSourcing</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Crowdsourcing</name>
+  <packaging>war</packaging>
+  <name>sanket</name>
+  <description>testing</description>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -15,13 +17,13 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
-  <dependencies>
-  	<dependency>
-  		<groupId>javax</groupId>
-  		<artifactId>javaee-api</artifactId>
-  		<version>7.0</version>
-  	</dependency>
-  </dependencies>
 </project>

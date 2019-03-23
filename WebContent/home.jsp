@@ -6,7 +6,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><%@include file="title.jsp" %></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -15,7 +14,6 @@
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-
 <script type="text/javascript">
 function changeLikeDislike(type,id){
       var dataString = 'id='+ id + '&type=' + type;
@@ -71,41 +69,9 @@ function comment_button(event){
 
 
 </script>
-<script type="text/javascript">
-     function initGeolocation()
-     {
-    	
-        if( navigator.geolocation )
-        {
-           // Call getCurrentPosition with success and failure callbacks
-           navigator.geolocation.getCurrentPosition( success, fail );
-           alert(position.coords.longitude);
-        }
-        else
-        {
-           alert("Sorry, your browser does not support geolocation services.");
-        }
-     }
 
-     function success(position)
-     {
-
-         document.getElementById('lon').value = position.coords.longitude;
-         document.getElementById('lat').value = position.coords.latitude;
-         
-         
-         
-     }
-
-     function fail()
-     {
-        // Could not obtain location
-     }
-     
-   </script> 
 </head>
-<body onLoad="initGeolocation()">
-<!-- <body> -->
+<body>
 <%
 
 if(request.getParameter("follows")!=null){
@@ -134,7 +100,7 @@ if(request.getParameter("Unfollow")!=null){
 </div>
 
 <div id="footer">
-<%-- <%@include file="FollowSearchForm.jsp" %> --%>
+<%@include file="FollowSearchForm.jsp" %>
 	<div class="container">
 		
 
@@ -158,15 +124,8 @@ if(request.getParameter("Unfollow")!=null){
 			</td>
           </tr>
           <tr>
-          <td>Occur Date: <input type="date" name="date" required/></td>
-          </tr>
-          <tr>
           <td><span style="color: red;">*</span>
            Add #Tag: <input type="text" name="searchtag" id="tag" style="width: 50%; height: 50px" title="Please Enter Status/Image/Video Related Information" required></td>
-          </tr>
-          <tr >
-          <td><input type="text" name="lat" id="lat" readonly="readonly">
-		<input type="text" name="lon" id="lon" readonly="readonly"></td>
           </tr>
           <tr>
           	<td><input type="submit" value="Post"></td>

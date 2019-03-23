@@ -11,8 +11,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.apache.commons.io.throwsException;
-
 public class DateDifferentExample {
 
 	
@@ -69,7 +67,7 @@ public class DateDifferentExample {
 		
 		//String dateStart = "03/15/2016 13:10:58";
 		//String dateStop = "03/15/2016 10:31:48";
-        
+
 		//HH converts hour in 24 hours format (0-23), day calculation
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -80,7 +78,7 @@ public class DateDifferentExample {
 		try {
 			d1 = format.parse(endDate);
 			d2 = format.parse(startDate);
-			new throwsException();
+
 			//in milliseconds
 			long diff = d2.getTime() - d1.getTime();
 

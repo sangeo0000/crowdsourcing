@@ -13,8 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.io.mysqlConnectionTest;
-
 import com.util.DbConnection;
 
 @WebServlet("/userlogin")
@@ -30,7 +28,7 @@ public class userlogin extends HttpServlet {
     PreparedStatement ps;
     ResultSet rs;
 
-   String username;
+   //String username;
     String password;
     String fname;
     String lname;
@@ -42,9 +40,7 @@ public class userlogin extends HttpServlet {
     	{
     		try
     		{
-    			System.out.println("test");
-    			con=DbConnection.getConnection();
-    			//\u000d new mysqlConnectionTest();
+    			//con=DbConnection.getConnection();
     			
     		}
     		catch(Exception e)
@@ -55,24 +51,25 @@ public class userlogin extends HttpServlet {
     }
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
+		
 	}
 
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException 
 	{
-		 
 		PrintWriter out = res.getWriter();
 		 try{  
+			 con=DbConnection.getConnection();
 			 res.setContentType("text/html");  
-	       //   username = req.getParameter("username");  
+	          //username = req.getParameter("username");  
 			 	email=req.getParameter("email");
 			 	
 	          password = req.getParameter("password");
 	          
 	          System.out.println(email+" "+password);
 	          
-	          ps =con.prepareStatement("select * from user_info where email=? or username=? and password=?");	          
+	          ps =con.prepareStatement("select * from user_info where email=? or username=? and password=?");
+	          
 	          ps.setString(1,email);
 	          ps.setString(2,email);
 	          ps.setString(3,password);
@@ -89,19 +86,11 @@ public class userlogin extends HttpServlet {
 	        	  String lname=rs.getString("lname");
 	        	  String email=rs.getString("email");
 	        	  String ppicture=rs.getString("ppicture");
-	        	 
-	        	  String lat=rs.getString("lat");
-	                String lon=rs.getString("lon");
+	        	  
 	        	 /* String studyingfield=rs.getString("studyingfields");*/
 	        	  String userid=rs.getString("id");
 	        	  
-	        	  session.setAttribute("lat",lat);
-		            session.setAttribute("lon",lon);
 	        	 
-		            System.out.println("lat"+lat);
-		            System.out.println("lon"+lon);
-		            
-		            
 	            session.setAttribute("userid",userid);
 	            session.setAttribute("fname",fname);
 	            session.setAttribute("lname",lname);

@@ -132,7 +132,7 @@ public class profilepicture extends HttpServlet {
 			
 			
 			
-			File file = uploadFile(fileItem,"D:\\workspace\\ProjectChanges\\CountryLevelTweetClassification\\WebContent\\profilepicture");
+			File file = uploadFile(fileItem,"D:\\workspace\\CrowdSourcing\\WebContent\\profilepicture");
 			//File file1 = uploadFile(fileItem,"D:\\workspace\\facebookV461New\\WebContent\\profilepicture");
 			
 			HttpSession session=request.getSession();
@@ -146,9 +146,8 @@ public class profilepicture extends HttpServlet {
 			session.setAttribute("ppicture", file.getName());
 			
 			
-			Thread.sleep(4000);
-			//response.sendRedirect("Account.jsp");
-			response.sendRedirect("profilepic.jsp?done");
+			
+			response.sendRedirect("Account.jsp");
 			
 		} catch (Exception e) {
 			

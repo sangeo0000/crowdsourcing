@@ -1,0 +1,234 @@
+
+>>> data=pd.read_csv('student.csv')
+>>> data
+   roll     name class  marks  age
+0     1     anil    TE  56.77   22
+1     2     amit    TE  59.77   21
+2     3   aniket    BE  76.88   19
+3     4  ajinkya    TE  69.66   20
+4     5     asha    TE  63.28   20
+5     6   ayesha    BE  49.55   20
+6     7     amar    BE  65.34   19
+7     8    amita    BE  68.33   23
+8     9     amol    TE  56.75   20
+9    10    anmol    BE  78.66   21
+>>> type(data)
+<class 'pandas.core.frame.DataFrame'>
+>>> data.shape()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object is not callable
+>>> data.shape
+(10, 5)
+>>> data.tail()
+   roll    name class  marks  age
+5     6  ayesha    BE  49.55   20
+6     7    amar    BE  65.34   19
+7     8   amita    BE  68.33   23
+8     9    amol    TE  56.75   20
+9    10   anmol    BE  78.66   21
+>>> data.head(3)
+   roll    name class  marks  age
+0     1    anil    TE  56.77   22
+1     2    amit    TE  59.77   21
+2     3  aniket    BE  76.88   19
+>>> data
+   roll     name class  marks  age
+0     1     anil    TE  56.77   22
+1     2     amit    TE  59.77   21
+2     3   aniket    BE  76.88   19
+3     4  ajinkya    TE  69.66   20
+4     5     asha    TE  63.28   20
+5     6   ayesha    BE  49.55   20
+6     7     amar    BE  65.34   19
+7     8    amita    BE  68.33   23
+8     9     amol    TE  56.75   20
+9    10    anmol    BE  78.66   21
+>>> data.iloc[4:9,:]
+   roll    name class  marks  age
+4     5    asha    TE  63.28   20
+5     6  ayesha    BE  49.55   20
+6     7    amar    BE  65.34   19
+7     8   amita    BE  68.33   23
+8     9    amol    TE  56.75   20
+>>> data.iloc[4:,:]
+   roll    name class  marks  age
+4     5    asha    TE  63.28   20
+5     6  ayesha    BE  49.55   20
+6     7    amar    BE  65.34   19
+7     8   amita    BE  68.33   23
+8     9    amol    TE  56.75   20
+9    10   anmol    BE  78.66   21
+>>> data.iloc[4:,2:]
+  class  marks  age
+4    TE  63.28   20
+5    BE  49.55   20
+6    BE  65.34   19
+7    BE  68.33   23
+8    TE  56.75   20
+9    BE  78.66   21
+>>> data.iloc[4:,:]
+   roll    name class  marks  age
+4     5    asha    TE  63.28   20
+5     6  ayesha    BE  49.55   20
+6     7    amar    BE  65.34   19
+7     8   amita    BE  68.33   23
+8     9    amol    TE  56.75   20
+9    10   anmol    BE  78.66   21
+>>> data.iloc[:7,:]
+   roll     name class  marks  age
+0     1     anil    TE  56.77   22
+1     2     amit    TE  59.77   21
+2     3   aniket    BE  76.88   19
+3     4  ajinkya    TE  69.66   20
+4     5     asha    TE  63.28   20
+5     6   ayesha    BE  49.55   20
+6     7     amar    BE  65.34   19
+>>> data.iloc[2:7,2:4]
+  class  marks
+2    BE  76.88
+3    TE  69.66
+4    TE  63.28
+5    BE  49.55
+6    BE  65.34
+>>> data.iloc[2:,2:]
+  class  marks  age
+2    BE  76.88   19
+3    TE  69.66   20
+4    TE  63.28   20
+5    BE  49.55   20
+6    BE  65.34   19
+7    BE  68.33   23
+8    TE  56.75   20
+9    BE  78.66   21
+>>> data.iloc[4:8,:3]
+   roll    name class
+4     5    asha    TE
+5     6  ayesha    BE
+6     7    amar    BE
+7     8   amita    BE
+
+
+
+>>> data.loc[:,'marks']
+0    56.77
+1    59.77
+2    76.88
+3    69.66
+4    63.28
+5    49.55
+6    65.34
+7    68.33
+8    56.75
+9    78.66
+Name: marks, dtype: float64
+>>> data.loc[:,['name','marks']]
+      name  marks
+0     anil  56.77
+1     amit  59.77
+2   aniket  76.88
+3  ajinkya  69.66
+4     asha  63.28
+5   ayesha  49.55
+6     amar  65.34
+7    amita  68.33
+8     amol  56.75
+9    anmol  78.66
+>>> data.loc[:8,['name','marks']]
+      name  marks
+0     anil  56.77
+1     amit  59.77
+2   aniket  76.88
+3  ajinkya  69.66
+4     asha  63.28
+5   ayesha  49.55
+6     amar  65.34
+7    amita  68.33
+8     amol  56.75
+>>> data.loc[4:8,['name','marks']]
+     name  marks
+4    asha  63.28
+5  ayesha  49.55
+6    amar  65.34
+7   amita  68.33
+8    amol  56.75
+>>> x=data.iloc[:,-3]
+>>> x
+0    TE
+1    TE
+2    BE
+3    TE
+4    TE
+5    BE
+6    BE
+7    BE
+8    TE
+9    BE
+Name: class, dtype: object
+>>> data.count()
+roll     10
+name     10
+class    10
+marks    10
+age      10
+dtype: int64
+>>> data.max()
+roll         10
+name     ayesha
+class        TE
+marks     78.66
+age          23
+dtype: object
+
+
+
+
+>>> filter=data['marks']>60
+>>> data[filter]
+   roll     name class  marks  age
+2     3   aniket    BE  76.88   19
+3     4  ajinkya    TE  69.66   20
+4     5     asha    TE  63.28   20
+6     7     amar    BE  65.34   19
+7     8    amita    BE  68.33   23
+9    10    anmol    BE  78.66   21
+>>> filter=(data['marks']>60)&(data['class']=='BE')
+>>> data[filter]
+   roll    name class  marks  age
+2     3  aniket    BE  76.88   19
+6     7    amar    BE  65.34   19
+7     8   amita    BE  68.33   23
+9    10   anmol    BE  78.66   21
+>>> filter=(data['marks']>60)&(data['class']=='BE')&(data['age']>18)
+>>> data[filter]
+   roll    name class  marks  age
+2     3  aniket    BE  76.88   19
+6     7    amar    BE  65.34   19
+7     8   amita    BE  68.33   23
+9    10   anmol    BE  78.66   21
+>>> filter=(data['marks']>60)&(data['class']=='BE')&(data['age']>19)
+>>> data[filter]
+   roll   name class  marks  age
+7     8  amita    BE  68.33   23
+9    10  anmol    BE  78.66   21
+>>> x=data[filter]
+>>> x.to_csv('out.csv')
+>>> x.to_csv('out.csv',index=FALSE)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'FALSE' is not defined
+>>> x.to_csv('out.csv',index=False)
+>>> x.to_html('out.csv',index=False)
+>>> x.to_latex('out.tex',index=False)
+>>> x.to_html('out.html',index=False)
+>>>
+
+from sklearn.linear_model import LinearRegression
+model=LinearRegression()
+model.fit(x,y)
+it eill take x, y and further is trained
+then predict is used to find the other
+////////////////////////
+tensorFlow api
+1 tensor
+

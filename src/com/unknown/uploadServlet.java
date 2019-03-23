@@ -31,8 +31,8 @@ import com.util.DbConnection;
 public class uploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Connection con=null;
-	 private final String UPLOAD_DIRECTORY = "D:\\workspace\\CrowdSorcing1\\WebContent\\uploadfiles";
-	 //private final String UPLOAD_DIRECTORY1 = "D:\\data\\dataset\\input.txt"; 
+	 private final String UPLOAD_DIRECTORY = "D:\\workspace\\CrowdSourcing\\WebContent\\uploadfiles";
+	// private final String UPLOAD_DIRECTORY1 = "D:\\data\\dataset\\input.txt"; 
 	 public void init()
 	    {
 	    	{
@@ -75,9 +75,6 @@ public class uploadServlet extends HttpServlet {
 	               String postContent ="";
 	               String name = "";
 	               String postPrivacy = "";
-	               String lat = "";
-	               String lon = "";
-	               String date1 = "";
 	               
 	               String FileExtention = "";
 	               long FileSize = 0;
@@ -125,20 +122,6 @@ public class uploadServlet extends HttpServlet {
 	                	   
 	                	   
 	                   }
-	                   else if(item.getFieldName().equals("lat")){
-	                	   lat = item.getString();
-	                	
-	                   }
-	                   else if(item.getFieldName().equals("lon")){
-	                	   lon = item.getString();
-	                	   
-	                	   
-	                   }
-	                   else if(item.getFieldName().equals("date")){
-	                	   date1 = item.getString();
-	                	   
-	                	   
-	                   }
 	                   
 	                  
 	                  
@@ -147,18 +130,15 @@ public class uploadServlet extends HttpServlet {
 	               
 	               
 	            
-	               //String place = AddressFromLatLon.getAddressByGpsCoordinates(lon, lat);
+	               
 	               
 	       		GlobalFunction GF = new GlobalFunction();
 	               System.out.println("Connection created");
-	               SentimentAnalysis sn = new SentimentAnalysis();
-	               String stop = Stopwords.removeStopWords(postContent.trim());
-	               String naturaldisaster = sn.naturalDisaster(stop);
-	               String place = sn.places(stop);
+	               
 	            
 	   				System.out.println("2");
 	   				
-	               PreparedStatement st=con.prepareStatement("insert into status(userid,filename,type,filesize,category,postContent,postDate,privacy,searchtag,poststatus,date1,lat,lon) values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+	               PreparedStatement st=con.prepareStatement("insert into status(userid,filename,type,filesize,category,postContent,postDate,privacy,searchtag,poststatus) values(?,?,?,?,?,?,?,?,?,?)");
 	               
 	             
 	           
@@ -175,29 +155,7 @@ public class uploadServlet extends HttpServlet {
 	                st.setString(8, postPrivacy);
 	                st.setString(9, tag);
 	                st.setString(10, postContent);
-	                st.setString(11, date1);
-	                st.setString(12, lat);
-	                st.setString(13, lon);
-	                /* st.setString(13, place);*/
 	            st.executeUpdate();
-	            int count = 0;
-	            if(!naturaldisaster.equals("") && !place.equals(""))
-	            {
-	            	count++;
-	            PreparedStatement ps = con.prepareStatement("insert into sentiment(senti,place,date1) values(?,?,?)");
-	            ps.setString(1, naturaldisaster.trim());
-	            ps.setString(2, place.trim());
-	            ps.setString(3, date1);
-	            ps.executeUpdate();
-	            }
-	            if(count>0)
-	            {
-	            	PreparedStatement pp = con.prepareStatement("insert into notification(Subject,Status) values(?,?)");
-	            	pp.setString(1, postContent);
-	            	pp.setString(2, "Active");
-	            	
-	            	pp.executeUpdate();
-	            }
 	                System.out.println("end");
 	   			
 	            if(postPrivacy.equalsIgnoreCase("0")){

@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><%@include file="title.jsp" %></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -77,7 +76,7 @@ if(request.getParameter("exists")!=null)
 }
 if(request.getParameter("fail")!=null)
 {
-	out.println("<script>alert('Your Given Location And Your Current Location Didnt Matched.')</script>");
+	out.println("<script>alert('Your Given Location And Your Current Location Didn't Matched.)</script>");
 }
 %>
 <div id="header-wrapper">
@@ -88,8 +87,9 @@ if(request.getParameter("fail")!=null)
 		<div id="menu">
 			<ul>
 				<li><a href="index.jsp" accesskey="1" title="">Home</a></li>
-				<li class="active"><a href="register.jsp" accesskey="2" title="">Register</a></li>
-				<li><a href="admin.jsp" accesskey="3" title="">Admin</a></li>
+				<li><a href="user.jsp" accesskey="2" title="">User</a></li>
+				<li class="active"><a href="register.jsp" accesskey="3" title="">Register</a></li>
+				<li><a href="admin.jsp" accesskey="4" title="">Admin</a></li>
 				
 			</ul>
 		</div>
@@ -127,24 +127,15 @@ if(request.getParameter("fail")!=null)
           <tr>  <td><strong>Mobile no</strong></td><td><input type="number" name="mobile"  maxlength="10" pattern="\d{10}" required></input></td>
             </tr>
            
-           <!-- <tr>  <td><strong>Lang</struageong></td><td>
            
-<select name="language" required>
-<option value="">---Select---</option>
-<option value="english">English</option>
-<option value="hindi">Hindi</option>
-<option value="marathi">Marathi</option>
-</select>
-</input></td>
-            </tr> -->
             <tr> <td><strong>Address</strong></td><td><input type="text" name="address" required></input></td>
             </tr>
             
-             <!-- <tr>
-              <td><strong>Your Location</strong></td><td><input type="text" name="location" id="YOUR_INPUT_ELEMENT_ID" required></input></td>
+             <tr>
+<!--               <td><strong>Your Location</strong></td><td><input type="text" name="location" id="YOUR_INPUT_ELEMENT_ID" required></input></td> -->
             <td> <input type="hidden" id="lat" name="lat" value=""></td>
          <td>  <input type="hidden" id="lon" name="lon" value=""></td> 
-            </tr> -->
+            </tr>
                
             <tr> <td><strong>Username</strong></td><td><input type="text" name="username" required></input></td>
             </tr>

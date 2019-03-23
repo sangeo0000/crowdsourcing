@@ -6,7 +6,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><%@include file="title.jsp" %></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -40,14 +39,16 @@ if(request.getParameter("Unfollow")!=null){
 		</div>
 		<div id="menu">
 			<ul>
+				   
           <li><a href="adminhome.jsp">Home</a></li>
          
-   			<!-- <li><a href="showdisasters.jsp">Show Disasters</a></li>
-   			<li><a href="showdisastersloc.jsp">Show Disasters as per Location</a></li> -->
+        
+   			
      			 <li><a href="Logout">Logout</a></li>
     		
-           
-        </ul>
+        
+				
+			</ul>
 		</div>
 	</div>
 </div>
@@ -59,45 +60,13 @@ if(request.getParameter("Unfollow")!=null){
 
 <h2>Admin Home</h2>
          
-       <form action="analysis" method="post">
-         <table>
-         <tr>
-         <td>Start Date</td>
-         <td><input type="date" name="start" required/></td>
-         </tr>
-         <tr>
-         <td>End Date</td>
-         <td><input type="date" name="end" required/></td>
-         </tr>
-         <tr>
-         <td>Place</td>
-         <td><input type="text" name="place" required/></td>
-         </tr>
-          <tr>
-         <td></td>
-         <td><input type="submit" value="Submit"/></td>
-         </tr>
-         </table> 
+       
+          
            
-		</form>
-		
-		<br /><br />
-		
-		<form action="graph1.jsp">
-		<select name="senti">
-		
-	<option value="">---Select---</option>	
-	<option value="flood">Flood</option>
-	<option value="fire">Fire</option>
-	<option value="earthquake">Earthquake</option>
-	</select>
-		<input type="date" name="date">
-		<input type="submit" value="Submit">
-		</form>
 		
 		
 		
-			</div>
+	</div>
 </div>
 <div id="copyright">
 	<p>&copy; Untitled. All rights reserved.</p>

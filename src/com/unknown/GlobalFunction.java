@@ -32,10 +32,13 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import com.util.DbConnection;
-import org.apache.commons.io.throwsException;
 
 //import org.apache.commons.codec.binary.Hex;
+
+
+
+
+import com.util.DbConnection;
 
 /**
  *
@@ -43,7 +46,7 @@ import org.apache.commons.io.throwsException;
  */
 public class GlobalFunction {
     
-	Connection con = DbConnection.getConnection();
+    Connection con = DbConnection.getConnection();
     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     Date date = new Date();            
     String Addeddate=dateFormat.format(date);
@@ -631,8 +634,7 @@ public int getNotificationCount(int userid) throws SQLException{
     int data=0;
     try{
     st = con.createStatement();
- //   ResultSet rs = st.executeQuery("select count(id) from notification where notiTo="+userid+" and Status='Active'");
-    ResultSet rs = st.executeQuery("select count(id) from notification where Status='Active'");
+    ResultSet rs = st.executeQuery("select count(id) from notification where notiTo="+userid+" and Status='Active'");
     if(rs.next()){
         data = rs.getInt("count(id)");
     return data;
@@ -825,7 +827,6 @@ public boolean isFollow(int LoggedID,int FollowId) throws SQLException{
 	   
     try{
     st = con.createStatement();
-    new throwsException();
     ResultSet rs = st.executeQuery("select * from follow_list where follower_id="+LoggedID+" and follow_of="+FollowId);
     if(rs.next()){
     return true;
@@ -873,26 +874,18 @@ public int getPostOwnerId(int postid) throws SQLException{
 
 
 
-public boolean isFollowStatus(int LoggedID,int FollowId) throws SQLException, ClassNotFoundException{
-	   System.out.println(LoggedID+" "+FollowId);
-try{
-	Connection con = DbConnection.getConnection();
-st = con.createStatement();
-ResultSet rs = st.executeQuery("select * from follow_list where follower_id="+LoggedID+" and follow_of="+FollowId);
-if(!rs.next()){
-return false;
-}
-}catch (SQLException e) {
-   System.out.println("Error:" + e);
-} finally {
-   if (st != null) {
-       st.close();
-   }
-   if (rs != null) {
-       rs.close();
-   }
-}
-return true;       
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

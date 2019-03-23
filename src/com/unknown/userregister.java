@@ -56,27 +56,26 @@ public class userregister extends HttpServlet {
 		//String designation=req.getParameter("designation");
 		String username=req.getParameter("username");
 		String password=req.getParameter("password");
-		/*String location=req.getParameter("location");
+		//String location=req.getParameter("location");
 		String lat=req.getParameter("lat");
 		String lon=req.getParameter("lon");
-		String language=req.getParameter("language");
-		*/
+		
 		
 		
 		try 
 		{
+
+			//String latLongs[] = LatitudeAndLongitudeWithPincode.getLatLongPositions(location);
+		     // System.out.println("Latitude: "+latLongs[0]+" and Longitude: "+latLongs[1]);
+		    //  System.out.println("Current Lat: "+lat+" Cuurent Lon: "+lon);
+		      
+		    // double dist = DistanceCalculator.distance(Double.parseDouble(latLongs[0]), Double.parseDouble(latLongs[1]), Double.parseDouble(lat), Double.parseDouble(lon), "K");
+		      //System.out.println(dist);
+		    // if(dist<2)
+			if(true)
+		     {
 			Connection con = DbConnection.getConnection();
 			PreparedStatement ps;
-
-			/*String latLongs[] = LatitudeAndLongitudeWithPincode.getLatLongPositions(location);
-		      System.out.println("Latitude: "+latLongs[0]+" and Longitude: "+latLongs[1]);
-		      System.out.println("Current Lat: "+lat+" Cuurent Lon: "+lon);
-		      
-		     double dist = DistanceCalculator.distance(Double.parseDouble(latLongs[0]), Double.parseDouble(latLongs[1]), Double.parseDouble(lat), Double.parseDouble(lon), "K");
-		      System.out.println(dist);
-		    */ 
-			//if(dist<2) {
-			
 			
 			String sql = "select * from user_info where email='"+email+"' or username='"+username+"'";
 			Statement st = con.createStatement();
@@ -95,10 +94,6 @@ public class userregister extends HttpServlet {
 			ps.setString(8, username);
 			ps.setString(9, password);
 			ps.setString(10, Addeddate);
-
-			/*ps.setString(11, lat);
-			ps.setString(12, lon);
-			ps.setString(13, language);*/
 			//ps.setString(11, group);
 			
 			
@@ -125,32 +120,10 @@ public class userregister extends HttpServlet {
 				res.sendRedirect("register.jsp?exists");
 				
 			}
-		 /*  }
+		   }
 		     else {
-		    	 ps=con.prepareStatement("insert into block (fname,lname,dob,gender,email,mobile,address,username,password,regDate,lat,lon,language) values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-					ps.setString(1,fname);
-					ps.setString(2,lname);
-					ps.setString(3, dob);
-					ps.setString(4, gender);
-					ps.setString(5, email);
-					ps.setString(6, mobile);
-					ps.setString(7, address);
-					ps.setString(8, username);
-					ps.setString(9, password);
-					ps.setString(10, Addeddate);
-					ps.setString(11, lat);
-					ps.setString(12, lon);
-					ps.setString(13, language);
-					//ps.setString(11, group);
-					
-					
-					//ps.setString(12,file.getName());
-				
-					//System.out.println("file name "+file.getName());
-					ps.executeUpdate();
-					
 				res.sendRedirect("register.jsp?fail");
-			}*/
+			}
 		}
 		
 		catch(Exception e1)

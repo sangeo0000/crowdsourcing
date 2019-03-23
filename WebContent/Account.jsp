@@ -6,7 +6,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><%@include file="title.jsp" %></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -108,69 +107,8 @@ if(request.getParameter("Unfollow")!=null){
 <h2>Profile</h2>
          
        
-          <%
-								//int userid = Integer.parseInt((String)session.getAttribute("userid"));
-								
-								Connection con =DbConnection.getConnection();
-								Statement st = con.createStatement();
-								
-								String userid1 = session.getAttribute("userid").toString();
-									String sql = "select * from user_info where id ="+userid1;
-									ResultSet rs = st.executeQuery(sql);
-										if(rs.next()){
-								
-								%>
-         
-                   <table cellspacing="4" align="center" border="1" cellpadding="5" style=" height:100%; text-align:center; line-height: 30px">
-								
-								
-								
-								<tr>
-									<td>Full Name</td>
-									<!-- <td>:</td> -->
-									<td><%= rs.getString("fname")+" "+rs.getString("lname") %></td>
-								</tr>
-								<tr>
-									<td>Date Of Birth</td>
-<!-- 									<td>:</td> -->
-									<td><%= rs.getString("dob") %></td>
-								</tr>
-								
-								<tr>
-									<td>Email</td>
-<!-- 									<td>:</td> -->
-									<td><%= rs.getString("email") %></td>
-								</tr>
-								
-									<tr>
-									<td>Mobile</td>
-<!-- 									<td>:</td> -->
-									<td><%= rs.getString("mobile") %></td>
-								</tr>
-								
-								
-									<tr>
-									<td>Address</td>
-<!-- 									<td>:</td> -->
-									<td><%= rs.getString("address") %></td>
-								</tr>
-								
-								
-								<tr>
-									<td>Registration Date</td>
-<!-- 									<td>:</td> -->
-									<td><%=rs.getString("regDate") %></td>
-								</tr>
-								
-								
-								<tr style="display:none">
-									<td colspan="3"><input class="btn" type="submit" name="Login" value="Register"></input></td>
-								</tr>
-								</table>
-                </div>
-                <!-- train section -->
-                 
-                <%} %>      		 
+          
+           
 		
 		
 		
