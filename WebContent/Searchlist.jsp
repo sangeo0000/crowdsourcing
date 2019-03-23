@@ -133,7 +133,7 @@ if(request.getParameter("Unfollow")!=null){
 							</p>
 							<%
 							boolean isFollow = GF.isFollow(userid, rs.getInt("id"));
-							boolean isFollowStatus = GF.isFollowStatus(userid, rs.getInt("id"));
+							//boolean isFollowStatus = GF.isFollowStatus(userid, rs.getInt("id"));
 							System.out.println(isFollow);
 							//boolean isRequestSend=GF.isRequestSend(userid, rs.getInt("id"));
 							if(isFollow==true){
